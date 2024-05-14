@@ -2,7 +2,7 @@ using AutoMapper;
 using CustomerApp.DTOs.Input;
 using CustomerApp.DTOs.Output;
 using CustomerApp.Entities;
-using CustomerApp.Repositories;
+using Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerApp.Controllers;

@@ -1,7 +1,9 @@
-using CustomerApp.Data;
+using Infra.Database;
 using CustomerApp.Mappers;
 using CustomerApp.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Domain.Repositories;
+using Infra.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

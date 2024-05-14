@@ -16,7 +16,9 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5251",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MONGODB_URI": "mongodb://localhost:27017/",
+        "MONGODB_DATABASE": "dbiatec"
       }
     },
     "https": {
@@ -26,7 +28,9 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7091;http://localhost:5251",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MONGODB_URI": "mongodb://localhost:27017/",
+        "MONGODB_DATABASE": "dbiatec"
       }
     },
     "IIS Express": {
@@ -34,7 +38,9 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MONGODB_URI": "mongodb://localhost:27017/",
+        "MONGODB_DATABASE": "dbiatec"
       }
     }
   }

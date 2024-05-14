@@ -1,4 +1,5 @@
-using CustomerApp.Entities;
+using Domain.Entities;
+using Domain.Repositories;
 
 namespace CustomerApp.Repositories;
 
