@@ -15,7 +15,7 @@ public class BankTransaction
 
     public BankTransaction Deposit(BankAccount bankAccount, decimal value)
     {
-        if (bankAccount.isInactived) {
+        if (bankAccount.isInactived ?? false) {
             throw new DomainException("it is not possible to carry out operations on a deactivated account.");
         }
 
@@ -35,7 +35,7 @@ public class BankTransaction
 
     public BankTransaction Withdraw(BankAccount bankAccount, decimal value)
     {
-        if (bankAccount.isInactived) {
+        if (bankAccount.isInactived ?? false) {
             throw new DomainException("it is not possible to carry out operations on a deactivated account.");
         }
 
