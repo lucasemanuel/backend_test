@@ -1,3 +1,3 @@
 namespace CustomerApp.DTOs.Output;
 
-public record responseCreateCustomerDTO(string name, string email);
+public record ResponseCreateCustomerDTO(string name, string email);

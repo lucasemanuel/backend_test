@@ -6,6 +6,8 @@ namespace Infra.Database;
 public class MongoDbContext : DbContext
 {
     public DbSet<Customer> Customer { get; set; }
+    public DbSet<BankAccount> BankAccount { get; set; }
+    public DbSet<BankTransaction> BankTransaction { get; set; }
 
     public static MongoDbContext Create(IMongoDatabase database) =>
         new(new DbContextOptionsBuilder<MongoDbContext>()

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Domain.Entities;
 using Domain.Repositories;
 
@@ -14,5 +15,17 @@ class CustomerRepository : ICustomerRepository
     public void Insert(Customer entity)
     {
         _repositoryBase.Insert(entity);
+    }
+
+    public Customer? GetCustomerById(string id)
+    {
+        return _repositoryBase.GetById(id);
+    }
+
+    public Customer? GetCustomerByEmail(string email)
+    {
+        Expression<Func<Customer, bool>> predicate = customer => customer.email == email;
+
+        return _repositoryBase.GetByCriteria(predicate).FirstOrDefault();
     }
 }

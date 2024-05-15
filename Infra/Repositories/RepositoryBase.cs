@@ -2,6 +2,7 @@ using Domain.Repositories;
 using Infra.Database;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
+using System.Linq.Expressions;
 
 namespace Infra.Repositories;
 
@@ -24,6 +25,11 @@ public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : 
     public TEntity? GetById(string id)
     {
         return _dbSet.Find(id);
+    }
+
+    public IQueryable<TEntity> GetByCriteria(Expression<Func<TEntity, bool>> predicate)
+    {
+        return _dbSet.Where(predicate);
     }
 
     public void Insert(TEntity entity)
