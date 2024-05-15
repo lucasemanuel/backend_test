@@ -1,0 +1,39 @@
+﻿services:
+  customer.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=3000
+      - ASPNETCORE_HTTPS_PORTS=3001
+      - DOTNET_NUGET_SIGNATURE_VERIFICATION=false
+    container_name: custmer.api
+    image: customer.api
+    build:
+      context: .
+      dockerfile: CustomerApp/Dockerfile
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    volumes:
+      - ~/.aspnet/https:/https:ro
+      # - ~/.nuget/packages:/src/.nuget/packages:rw
+    depends_on:
+      - database.server
+  
+  database.server:
+    image: "mongo"
+    container_name: database.server
+    ports:
+      - "27017:27017"
+    # volumes:
+    #   - mongodbdata:/data/db
+
+  customer.client:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    image: customer.client
+    container_name: customer.client
+    ports:
+      - "4200:4200"
+    depends_on: 
+      - customer.api
